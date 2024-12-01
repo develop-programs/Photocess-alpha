@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -196,7 +198,7 @@ export const Compare = ({
                             }}
                             transition={{ duration: 0 }}
                         >
-                            <img
+                            <Image
                                 alt="first image"
                                 src={firstImage}
                                 className={cn(

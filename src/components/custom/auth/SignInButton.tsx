@@ -8,7 +8,7 @@ export default function SignInButton() {
         <div>
             <Button onClick={() => {
                 signIn()
-            }} variant="ghost">
+            }} variant="ghost" size="sm">
                 Log In
             </Button>
         </div>

@@ -95,19 +95,19 @@ export function SignInForm() {
                                                 aria-controls="password"
                                             >
                                                 {isVisible ? (
-                                                    <svg height="24" width="24" fill="none" className="size-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <svg height="24" width="24" fill="none" className="size-5" viewBox="0 0 24 24" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M14.53 9.47004L9.47001 14.53C8.82001 13.88 8.42001 12.99 8.42001 12C8.42001 10.02 10.02 8.42004 12 8.42004C12.99 8.42004 13.88 8.82004 14.53 9.47004Z" stroke="#04041C" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-                                                        <path d="M5.6 17.76C4.6 16.9 3.69 15.84 2.89 14.59C1.99 13.18 1.99 10.81 2.89 9.4C4.07 7.55 5.51 6.1 7.12 5.13" stroke="#04041C" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-                                                        <path d="M17.82 5.76998C16.07 4.44998 14.07 3.72998 12 3.72998" stroke="#04041C" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-                                                        <path d="M8.42001 19.5301C9.56001 20.0101 10.77 20.2701 12 20.2701C15.53 20.2701 18.82 18.1901 21.11 14.5901C22.01 13.1801 22.01 10.8101 21.11 9.40005C20.78 8.88005 20.42 8.39005 20.05 7.93005" stroke="#04041C" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-                                                        <path d="M15.51 12.7C15.25 14.11 14.1 15.26 12.69 15.52" stroke="#04041C" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-                                                        <path d="M9.47 14.53L2 22" stroke="#04041C" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-                                                        <path d="M22 2L14.53 9.47" stroke="#04041C" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+                                                        <path d="M5.6 17.76C4.6 16.9 3.69 15.84 2.89 14.59C1.99 13.18 1.99 10.81 2.89 9.4C4.07 7.55 5.51 6.1 7.12 5.13" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+                                                        <path d="M17.82 5.76998C16.07 4.44998 14.07 3.72998 12 3.72998" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+                                                        <path d="M8.42001 19.5301C9.56001 20.0101 10.77 20.2701 12 20.2701C15.53 20.2701 18.82 18.1901 21.11 14.5901C22.01 13.1801 22.01 10.8101 21.11 9.40005C20.78 8.88005 20.42 8.39005 20.05 7.93005" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+                                                        <path d="M15.51 12.7C15.25 14.11 14.1 15.26 12.69 15.52" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+                                                        <path d="M9.47 14.53L2 22" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+                                                        <path d="M22 2L14.53 9.47" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
                                                     </svg>
                                                 ) : (
-                                                    <svg height="24" width="24" fill="none" className="size-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M9.03001 14C8.64001 13.43 8.42001 12.74 8.42001 12C8.42001 10.02 10.02 8.42004 12 8.42004C13.98 8.42004 15.58 10.02 15.58 12C15.58 13.98 13.98 15.58 12 15.58" stroke="#04041C" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-                                                        <path d="M17.56 5.57998C15.87 4.37998 13.97 3.72998 12 3.72998C8.47 3.72998 5.18 5.80998 2.89 9.40998C1.99 10.82 1.99 13.19 2.89 14.6C5.18 18.2 8.47 20.28 12 20.28C15.53 20.28 18.82 18.2 21.11 14.6C22.01 13.19 22.01 10.82 21.11 9.40998" stroke="#04041C" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+                                                    <svg height="24" width="24" fill="none" stroke="currentColor" className="size-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M9.03001 14C8.64001 13.43 8.42001 12.74 8.42001 12C8.42001 10.02 10.02 8.42004 12 8.42004C13.98 8.42004 15.58 10.02 15.58 12C15.58 13.98 13.98 15.58 12 15.58" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+                                                        <path d="M17.56 5.57998C15.87 4.37998 13.97 3.72998 12 3.72998C8.47 3.72998 5.18 5.80998 2.89 9.40998C1.99 10.82 1.99 13.19 2.89 14.6C5.18 18.2 8.47 20.28 12 20.28C15.53 20.28 18.82 18.2 21.11 14.6C22.01 13.19 22.01 10.82 21.11 9.40998" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
                                                     </svg>
                                                 )}
                                             </button>

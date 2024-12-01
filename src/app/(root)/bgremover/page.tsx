@@ -8,12 +8,12 @@ export default function page() {
             <div className='h-screen' style={{
                 background: "radial-gradient(155.35% 155.35% at 50% -17.73%, #000 0%, #191919 43.63%, #343434 68.62%, #666 100%)",
             }}>
-                <div className='h-full max-w-7xl container relative flex items-start justify-center flex-col gap-12'>
+                <div className='h-full max-w-[90rem] container relative flex items-start justify-center flex-col gap-12'>
                     <div className='w-full grid gap-4 pe-32 xl:pe-[32rem]'>
                         <h1 className='text-7xl xl:text-[5.3125rem] font-black leading-tight'>Background
                             <br /> Remover</h1>
-                        <p className='text-3xl xl:text-4xl font-semibold'>Remove background of any image effortlessly</p>
-                        <span className='text-2xl'>Easily remove backgrounds from your photos! Simplify your images and create beautiful visuals with just a few clicks.</span>
+                        <p className='text-2xl xl:text-3xl font-semibold'>Remove background of any image effortlessly</p>
+                        <span className='text-lg xl:text-xl'>Easily remove backgrounds from your photos! Simplify your images and create beautiful visuals with just a few clicks.</span>
                     </div>
                 </div>
                 <div className='-mt-40 w-full grid place-content-center'>
@@ -29,7 +29,7 @@ export default function page() {
             <div className='w-full h-44' style={{
                 background: "linear-gradient(180deg, #565656 -48.47%, #000 87.79%)"
             }}></div>
-            <div className='py-12 max-w-7xl container flex justify-between items-center gap-3'>
+            <div className='py-12 max-w-6xl container flex justify-between items-center gap-3'>
                 {
                     [
                         {
@@ -69,7 +69,7 @@ export default function page() {
                     ))
                 }
             </div>
-            <div className='max-w-7xl container py-12'>
+            <div className='max-w-6xl container py-12'>
                 <div className='bg-[#2D2D2D] p-6 rounded-xl space-y-12'>
                     <span className='text-2xl font-bold'>Why Choose Photocess bg remover?</span>
                     <div className='space-y-6'>
@@ -103,7 +103,7 @@ export default function page() {
                     </div>
                 </div>
             </div>
-            <div className='max-w-7xl container py-12 grid grid-cols-2 lg:grid-cols-4 gap-4'>
+            <div className='max-w-6xl container py-12 grid grid-cols-2 lg:grid-cols-4 gap-4'>
                 <Compare
                     firstImage="/beautiful little girl.png"
                     secondImage="./beautiful little girl bgremoved.png"
@@ -133,7 +133,7 @@ export default function page() {
                     slideMode="hover"
                 />
             </div>
-            <div className='max-w-7xl container py-12 grid place-content-center'>
+            <div className='max-w-6xl container py-12 grid place-content-center'>
                 <div className='flex justify-center gap-12 flex-col items-center'>
                     <span className='text-3xl font-bold'>Explore more of our services</span>
                     <div className='flex gap-6 items-center'>

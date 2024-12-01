@@ -151,7 +151,7 @@ export const Compare = ({
     return (
         <div
             ref={sliderRef}
-            className={cn("lg:w-[220px] lg:h-[220px] w-[360px] h-[360px] xl:w-[300px] xl:h-[300px] overflow-hidden", className)}
+            className={cn("lg:w-[220px] lg:h-[220px] w-[360px] h-[360px] xl:w-[250px] xl:h-[250px] overflow-hidden", className)}
             style={{
                 position: "relative",
                 cursor: slideMode === "drag" ? "grab" : "col-resize",
@@ -214,7 +214,7 @@ export const Compare = ({
                     ) : null}
                 </AnimatePresence>
             </div>
-            <Image src="/empty image.png" alt="empty image" className="absolute rounded-xl top-0 left-0 z-10" layout="fill" objectFit="cover" />
+            <Image src="/empty image.png" alt="empty image" className="absolute rounded-xl top-0 left-0 z-10 opacity-65" layout="fill" objectFit="cover" />
             <AnimatePresence initial={false}>
                 {secondImage ? (
                     <motion.img

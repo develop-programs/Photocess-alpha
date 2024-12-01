@@ -198,7 +198,7 @@ export const Compare = ({
                             }}
                             transition={{ duration: 0 }}
                         >
-                            <Image
+                            <img
                                 alt="first image"
                                 src={firstImage}
                                 className={cn(
@@ -206,6 +206,7 @@ export const Compare = ({
                                     firstImageClassName
                                 )}
                                 draggable={false}
+                                loading="lazy"
                             />
                         </motion.div>
                     ) : null}
@@ -222,6 +223,7 @@ export const Compare = ({
                         alt="second image"
                         src={secondImage}
                         draggable={false}
+                        loading="lazy"
                     />
                 ) : null}
             </AnimatePresence>

@@ -198,11 +198,13 @@ export const Compare = ({
                             }}
                             transition={{ duration: 0 }}
                         >
-                            <img
+                            <Image
                                 alt="first image"
                                 src={firstImage}
+                                width={360}
+                                height={360}
                                 className={cn(
-                                    "absolute inset-0  z-20 rounded-2xl flex-shrink-0 w-full h-full select-none",
+                                    "absolute inset-0 z-20 rounded-xl flex-shrink-0 w-full h-full select-none",
                                     firstImageClassName
                                 )}
                                 draggable={false}
@@ -212,12 +214,12 @@ export const Compare = ({
                     ) : null}
                 </AnimatePresence>
             </div>
-            <Image src="/empty image.png" alt="empty image" className="absolute top-0 left-0 z-10" layout="fill" objectFit="cover" />
+            <Image src="/empty image.png" alt="empty image" className="absolute rounded-xl top-0 left-0 z-10" layout="fill" objectFit="cover" />
             <AnimatePresence initial={false}>
                 {secondImage ? (
                     <motion.img
                         className={cn(
-                            "absolute top-0 left-0 z-[19] rounded-2xl w-full h-full select-none",
+                            "absolute top-0 left-0 z-[19] rounded-xl w-full h-full select-none",
                             secondImageClassname
                         )}
                         alt="second image"

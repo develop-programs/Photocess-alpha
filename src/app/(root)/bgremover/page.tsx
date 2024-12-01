@@ -105,28 +105,28 @@ export default function page() {
             </div>
             <div className='max-w-7xl container py-12 grid grid-cols-2 lg:grid-cols-4 gap-4'>
                 <Compare
-                    firstImage="./beautiful little girl.png"
+                    firstImage="/beautiful little girl.png"
                     secondImage="./beautiful little girl bgremoved.png"
                     firstImageClassName="object-cover object-left-top"
                     secondImageClassname="object-cover object-left-top"
                     slideMode="hover"
                 />
                 <Compare
-                    firstImage="./anime machanical girl.png"
+                    firstImage="/anime machanical girl.png"
                     secondImage="./anime machanical girl bgremoved.png"
                     firstImageClassName="object-cover object-left-top"
                     secondImageClassname="object-cover object-left-top"
                     slideMode="hover"
                 />
                 <Compare
-                    firstImage="./Pet.png"
+                    firstImage="/Pet.png"
                     secondImage="./Pet bgremoved.png"
                     firstImageClassName="object-cover object-left-top"
                     secondImageClassname="object-cover object-left-top"
                     slideMode="hover"
                 />
                 <Compare
-                    firstImage="./gamming laptop.png"
+                    firstImage="/gamming laptop.png"
                     secondImage="./gamming laptop bgremoved.png"
                     firstImageClassName="object-cover object-left-top"
                     secondImageClassname="object-cover object-left-top"

@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import FloatingActionButton from "@/components/custom/support/FloatingActionButton";
 import { ThemeProvider } from "@/provider/ThemeProvider";
+import ClientSessionProvider from "@/provider/ClientSessionProvider";
+import ReduxProvider from "@/provider/ReduxProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,15 +35,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-        <FloatingActionButton />
+        <ClientSessionProvider>
+          <ReduxProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="dark"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+            <FloatingActionButton />
+          </ReduxProvider>
+        </ClientSessionProvider>
       </body>
     </html>
   );

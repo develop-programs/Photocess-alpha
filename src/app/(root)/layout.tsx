@@ -5,10 +5,10 @@ import React from 'react'
 export default function layout({ children }: { children: React.ReactNode }) {
     return (
         <main>
-            <div className='none lg:block'>
+            <div className='hidden lg:block'>
                 <DesktopNav />
             </div>
-            <div className='block lg:none'>
+            <div className='block lg:hidden'>
                 <MobileNav />
             </div>
             {children}

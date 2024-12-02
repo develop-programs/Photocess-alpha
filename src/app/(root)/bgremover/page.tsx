@@ -10,14 +10,14 @@ export default function page() {
             }}>
                 <div className='h-full max-w-[90rem] container relative flex items-start justify-center flex-col gap-12'>
                     <div className='w-full grid gap-4 pe-32 xl:pe-[32rem]'>
-                        <h1 className='text-7xl xl:text-[5.3125rem] font-black leading-tight'>Background
+                        <h1 className='text-6xl xl:text-[5.3125rem] font-black leading-tight'>Background
                             <br /> Remover</h1>
                         <p className='text-2xl xl:text-3xl font-semibold'>Remove background of any image effortlessly</p>
                         <span className='text-lg xl:text-xl'>Easily remove backgrounds from your photos! Simplify your images and create beautiful visuals with just a few clicks.</span>
                     </div>
                 </div>
                 <div className='-mt-40 w-full grid place-content-center'>
-                    <div className='bg-[#161616] w-[40rem] xl:w-[70rem] flex items-center justify-center flex-col gap-6 rounded-xl border border-slate-300 py-16'>
+                    <div className='bg-[#161616] w-[40rem] lg:w-[50rem] xl:w-[70rem] flex items-center justify-center flex-col gap-6 rounded-xl border border-slate-300 py-12 xl:py-16'>
                         <svg width="73" height="72" viewBox="0 0 73 72" fill="none" xmlns="http://www.w3.org/2000/svg" stroke='currentColor'>
                             <path d="M12.5 61.1482C13.7141 62.3339 15.3608 63 17.0778 63H55.9222C57.6392 63 59.2859 62.3339 60.5 61.1482M36.5036 9V44.8274M36.5036 44.8274L51.3014 31.1379M36.5036 44.8274L21.7058 31.1379" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
@@ -29,7 +29,7 @@ export default function page() {
             <div className='w-full h-44' style={{
                 background: "linear-gradient(180deg, #565656 -48.47%, #000 87.79%)"
             }}></div>
-            <div className='py-12 max-w-6xl container flex justify-between items-center gap-3'>
+            <div className='py-12 mt-24 max-w-6xl container flex justify-between items-center gap-3'>
                 {
                     [
                         {
@@ -69,7 +69,7 @@ export default function page() {
                     ))
                 }
             </div>
-            <div className='max-w-6xl container py-12'>
+            <div className='max-w-6xl container py-24'>
                 <div className='bg-[#2D2D2D] p-6 rounded-xl space-y-12'>
                     <span className='text-2xl font-bold'>Why Choose Photocess bg remover?</span>
                     <div className='space-y-6'>
@@ -103,35 +103,36 @@ export default function page() {
                     </div>
                 </div>
             </div>
-            <div className='max-w-6xl container py-12 grid grid-cols-2 lg:grid-cols-4 gap-4'>
-                <Compare
-                    firstImage="/beautiful little girl.png"
-                    secondImage="./beautiful little girl bgremoved.png"
-                    firstImageClassName="object-cover object-left-top"
-                    secondImageClassname="object-cover object-left-top"
-                    slideMode="hover"
-                />
-                <Compare
-                    firstImage="/anime machanical girl.png"
-                    secondImage="./anime machanical girl bgremoved.png"
-                    firstImageClassName="object-cover object-left-top"
-                    secondImageClassname="object-cover object-left-top"
-                    slideMode="hover"
-                />
-                <Compare
-                    firstImage="/Pet.png"
-                    secondImage="./Pet bgremoved.png"
-                    firstImageClassName="object-cover object-left-top"
-                    secondImageClassname="object-cover object-left-top"
-                    slideMode="hover"
-                />
-                <Compare
-                    firstImage="/gamming laptop.png"
-                    secondImage="./gamming laptop bgremoved.png"
-                    firstImageClassName="object-cover object-left-top"
-                    secondImageClassname="object-cover object-left-top"
-                    slideMode="hover"
-                />
+            <div className='max-w-6xl container py-12 grid place-content-center grid-cols-2 lg:grid-cols-4 items-center gap-8'>
+                {
+                    [
+                        {
+                            firstImage: '/beautiful little girl.png',
+                            secondImage: '/beautiful little girl bgremoved.png'
+                        },
+                        {
+                            firstImage: '/anime machanical girl.png',
+                            secondImage: '/anime machanical girl bgremoved.png'
+                        },
+                        {
+                            firstImage: '/pet.png',
+                            secondImage: '/pet bgremoved.png'
+                        },
+                        {
+                            firstImage: '/gamming laptop.png',
+                            secondImage: '/gamming laptop bgremoved.png'
+                        }
+                    ].map((item, index) => (
+                        <div className='grid place-content-center py-6' key={index}>
+                            <Compare
+                                firstImage={item.firstImage}
+                                secondImage={item.secondImage}
+                                initialSliderPercentage={50}
+                                slideMode='drag'
+                                showHandlebar />
+                        </div>
+                    ))
+                }
             </div>
             <div className='max-w-6xl container py-12 grid place-content-center'>
                 <div className='flex justify-center gap-12 flex-col items-center'>
@@ -161,7 +162,7 @@ export default function page() {
                                     text: "AI Image Generator",
                                 }
                             ].map((item, index) => (
-                                <Button key={index} className='bg-white hover:bg-white/90 text-lg p-6'>
+                                <Button key={index} className='bg-white hover:bg-white/90 text-sm xl:text-lg p-6'>
                                     {item.svg}
                                     {item.text}
                                 </Button>

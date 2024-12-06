@@ -169,7 +169,7 @@ export function SignUpForm() {
                                 </FormItem>
                             )}
                         />
-                        <Button type="submit" className="mt-2 col-span-2">Submit</Button>
+                        <Button type="submit" variant="secondary" className="mt-2 col-span-2">Submit</Button>
                     </form>
                 </Form>
             </CardContent>

@@ -27,7 +27,7 @@ const components: { title: string; href: string; description: string }[] = [
     },
     {
         title: "AI Image Upscaler",
-        href: "/ai-upscaler",
+        href: "/upscaler",
         description: "Enhance the quality of any image with AI.",
     },
     {

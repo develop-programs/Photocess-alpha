@@ -1,8 +1,8 @@
 import {Compare} from "@/components/acernity/Compare";
 import {Button} from "@/components/ui/button";
 import React from "react";
-import {FileUploader} from "@/components/custom/FileUpload";
-import FileUploaderComponent from "@/components/custom/FileUploader";
+import Header from "@/components/custom/Header";
+import ResizerFileUpload from "@/app/(root)/resizer/(components)/ResizerFileUpload";
 
 export default function page() {
     return (
@@ -17,20 +17,15 @@ export default function page() {
                 <div
                     className="h-full max-w-6xl mx-auto relative flex items-start justify-center flex-col gap-12">
                     <div className="w-full grid gap-4 md:pe-32 xl:pe-[32rem]">
-                        <h1 className="min-[320px]:text-4xl sm:text-5xl md:text-6xl xl:text-[5.3125rem] font-black leading-tight">
-                            Image <br/>
-                            Resizer
-                        </h1>
-                        <p className="text-xl xl:text-3xl font-semibold">
-                            Instantly resizes your image
-                        </p>
-                        <span className="text-base xl:text-xl">
-                            Adjust the size of your image and the file size in just a few seconds.
-                        </span>
+                        <Header
+                            title={"Image Resizer"}
+                            description={"Instantly resizes your image"}
+                            about={"Adjust the size of your image and the file size in just a few seconds."}
+                        />
                     </div>
                 </div>
                 <div className="-mt-24 md:-mt-40 w-full grid place-content-center">
-                    <FileUploaderComponent/>
+                    <ResizerFileUpload/>
                 </div>
             </div>
             <div

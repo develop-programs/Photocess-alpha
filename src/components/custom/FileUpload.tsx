@@ -1,7 +1,7 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
+import {Input} from "@/components/ui/input";
+import {cn} from "@/lib/utils";
 import {
     Dispatch,
     SetStateAction,
@@ -19,9 +19,9 @@ import {
     FileRejection,
     DropzoneOptions,
 } from "react-dropzone";
-import { toast } from "sonner";
-import { Trash2 as RemoveIcon } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
+import {toast} from "sonner";
+import {Trash2 as RemoveIcon} from "lucide-react";
+import {buttonVariants} from "@/components/ui/button";
 
 type DirectionOptions = "rtl" | "ltr" | undefined;
 
@@ -209,7 +209,7 @@ export const FileUploader = forwardRef<
 
         const opts = dropzoneOptions
             ? dropzoneOptions
-            : { accept, maxFiles, maxSize, multiple };
+            : {accept, maxFiles, maxSize, multiple};
 
         const dropzoneState = useDropzone({
             ...opts,
@@ -257,8 +257,8 @@ FileUploader.displayName = "FileUploader";
 export const FileUploaderContent = forwardRef<
     HTMLDivElement,
     React.HTMLAttributes<HTMLDivElement>
->(({ children, className, ...props }, ref) => {
-    const { orientation } = useFileUpload();
+>(({children, className, ...props}, ref) => {
+    const {orientation} = useFileUpload();
     const containerRef = useRef<HTMLDivElement>(null);
 
     return (
@@ -287,14 +287,14 @@ FileUploaderContent.displayName = "FileUploaderContent";
 export const FileUploaderItem = forwardRef<
     HTMLDivElement,
     { index: number } & React.HTMLAttributes<HTMLDivElement>
->(({ className, index, children, ...props }, ref) => {
-    const { removeFileFromSet, activeIndex, direction } = useFileUpload();
+>(({className, index, children, ...props}, ref) => {
+    const {removeFileFromSet, activeIndex, direction} = useFileUpload();
     const isSelected = index === activeIndex;
     return (
         <div
             ref={ref}
             className={cn(
-                buttonVariants({ variant: "ghost" }),
+                buttonVariants({variant: "ghost"}),
                 "h-6 p-1 justify-between cursor-pointer relative",
                 className,
                 isSelected ? "bg-muted" : "",
@@ -313,7 +313,7 @@ export const FileUploaderItem = forwardRef<
                 onClick={() => removeFileFromSet(index)}
             >
                 <span className="sr-only">remove item {index}</span>
-                <RemoveIcon className="w-4 h-4 hover:stroke-destructive duration-200 ease-in-out" />
+                <RemoveIcon className="w-4 h-4 hover:stroke-destructive duration-200 ease-in-out"/>
             </button>
         </div>
     );
@@ -324,8 +324,8 @@ FileUploaderItem.displayName = "FileUploaderItem";
 export const FileInput = forwardRef<
     HTMLDivElement,
     React.HTMLAttributes<HTMLDivElement>
->(({ className, children, ...props }, ref) => {
-    const { dropzoneState, isFileTooBig, isLOF } = useFileUpload();
+>(({className, children, ...props}, ref) => {
+    const {dropzoneState, isFileTooBig, isLOF} = useFileUpload();
     const rootProps = isLOF ? {} : dropzoneState.getRootProps();
     return (
         <div

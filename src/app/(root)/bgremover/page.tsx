@@ -1,8 +1,8 @@
 import {Compare} from "@/components/acernity/Compare";
 import {Button} from "@/components/ui/button";
 import React from "react";
-import {FileUploader} from "@/components/custom/FileUpload";
-import FileUploaderComponent from "@/components/custom/FileUploader";
+import BgFileUpload from "@/app/(root)/bgremover/(components)/BgFileUpload";
+import Header from "@/components/custom/Header";
 
 export default function page() {
     return (
@@ -17,22 +17,12 @@ export default function page() {
                 <div
                     className="h-full max-w-6xl mx-auto relative flex items-start justify-center flex-col gap-12">
                     <div className="w-full grid gap-4 md:pe-32 xl:pe-[32rem]">
-                        <h1 className="min-[320px]:text-4xl sm:text-5xl md:text-6xl xl:text-[5.3125rem] font-black leading-tight">
-                            Background
-                            <br/> Remover
-                        </h1>
-                        <p className="text-xl xl:text-3xl font-semibold">
-                            Remove background of any image effortlessly
-                        </p>
-                        <span className="text-base xl:text-xl">
-                            Easily remove backgrounds from your photos! Simplify your images
-                            and create beautiful visuals with just a few clicks.
-                        </span>
+                        <Header title={"Background\n" +
+                            "Remover"} description={"Remove background of any image effortlessly"}
+                                about={"Easily remove backgrounds from your photos! Simplify your images and create beautiful visuals with just a few clicks."}/>
                     </div>
                 </div>
-                <div className="-mt-24 md:-mt-40 w-full grid place-content-center">
-                    <FileUploaderComponent/>
-                </div>
+                <BgFileUpload/>
             </div>
             <div
                 className="w-full h-44"
@@ -203,7 +193,7 @@ export default function page() {
                         </div>
                     ))}
                 </div>
-                <div className="py-12 grid place-content-center">
+                <div className="py-12 grid place-content-center gap-4 text-center">
                 <span className="text-xl md:text-3xl font-bold">
                     Explore more of our services
                 </span>
@@ -215,7 +205,7 @@ export default function page() {
                                         width="33"
                                         height="32"
                                         viewBox="0 0 33 32"
-                                        className="size-12"
+                                        className="size-6"
                                         fill="none"
                                         xmlns="http://www.w3.org/2000/svg"
                                     >
@@ -233,7 +223,7 @@ export default function page() {
                                         width="32"
                                         height="32"
                                         viewBox="0 0 32 32"
-                                        className="size-12"
+                                        className="size-6"
                                         fill="none"
                                         xmlns="http://www.w3.org/2000/svg"
                                     >
@@ -251,7 +241,7 @@ export default function page() {
                                         width="25"
                                         height="24"
                                         viewBox="0 0 25 24"
-                                        className="size-12"
+                                        className="size-6"
                                         fill="none"
                                         xmlns="http://www.w3.org/2000/svg"
                                     >

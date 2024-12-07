@@ -51,7 +51,7 @@ export default function FileUploaderComponent() {
             value={files}
             onValueChange={setFiles}
             dropzoneOptions={dropZoneConfig}
-            className="relative bg-slate-900 rounded-lg p-2"
+            className="relative bg-stone-900 rounded-lg p-2"
         >
             <FileInput className="outline-dashed outline-1 outline-white">
                 <div

@@ -39,7 +39,7 @@ const FileSvgDraw = () => {
     );
 };
 
-export default function ResizerFileUpload() {
+export default function UpscaleFileUploader() {
     const [files, setFiles] = useState<File[] | null>(null);
 
     const dropZoneConfig = {

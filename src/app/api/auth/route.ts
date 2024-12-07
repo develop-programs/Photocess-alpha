@@ -26,7 +26,7 @@ export async function GET(Request: NextRequest) {
         );
       }
       return await NextResponse.json(
-        { message: "user found", data: user, subscription: subscription },
+        { message: "user found", user: user, subscription: subscription },
         { status: 200 }
       );
     } catch (error) {

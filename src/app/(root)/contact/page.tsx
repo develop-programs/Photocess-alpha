@@ -1,15 +1,15 @@
 "use client"
 
-import {Button} from "@/components/ui/button"
-import {Input} from "@/components/ui/input"
-import {Textarea} from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
-import {Facebook, Instagram, Star} from 'lucide-react'
+import { Facebook, Instagram, Star } from 'lucide-react'
 import Link from "next/link"
 
 export default function page() {
@@ -45,7 +45,7 @@ export default function page() {
                     <h2 className="text-2xl font-semibold mb-8">
                         Frequently Asked Questions
                     </h2>
-                    <Accordion type="single" collapsible className="w-full">
+                    <Accordion type="single" collapsible className="w-full space-y-2">
                         {[
                             {
                                 question: "What services do you offer?",
@@ -72,14 +72,19 @@ export default function page() {
                                 answer: "You can schedule a consultation through our online booking system or contact form."
                             }
                         ].map((faq, index) => (
-                            <AccordionItem key={index} value={`item-${index}`}>
-                                <AccordionTrigger className="text-left">
+                            <AccordionItem
+                                value={`${index}`}
+                                key={index}
+                                className="rounded-lg border bg-background px-4 py-1"
+                            >
+                                <AccordionTrigger className="py-2 text-[15px] leading-6 hover:no-underline">
                                     {faq.question}
                                 </AccordionTrigger>
-                                <AccordionContent className="text-gray-400">
+                                <AccordionContent className="pb-2 text-muted-foreground">
                                     {faq.answer}
                                 </AccordionContent>
                             </AccordionItem>
+
                         ))}
                     </Accordion>
                 </section>
@@ -88,13 +93,13 @@ export default function page() {
                 <footer className="text-center space-y-8">
                     <div className="flex justify-center gap-4">
                         <Link href="#" className="text-gray-400 hover:text-white">
-                            <Facebook className="h-6 w-6"/>
+                            <Facebook className="h-6 w-6" />
                         </Link>
                         <Link href="#" className="text-gray-400 hover:text-white">
-                            <Instagram className="h-6 w-6"/>
+                            <Instagram className="h-6 w-6" />
                         </Link>
                         <Link href="#" className="text-gray-400 hover:text-white">
-                            <Star className="h-6 w-6"/>
+                            <Star className="h-6 w-6" />
                         </Link>
                     </div>
 

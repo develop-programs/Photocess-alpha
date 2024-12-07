@@ -1,7 +1,8 @@
+/* eslint-disable */
 'use client';
 import * as React from 'react';
-import {cn} from '@/lib/utils';
-import {useImperativeHandle} from 'react';
+import { cn } from '@/lib/utils';
+import { useImperativeHandle } from 'react';
 
 interface UseAutosizeTextAreaProps {
     textAreaRef: React.MutableRefObject<HTMLTextAreaElement | null>;
@@ -11,11 +12,11 @@ interface UseAutosizeTextAreaProps {
 }
 
 export const useAutosizeTextArea = ({
-                                        textAreaRef,
-                                        triggerAutoSize,
-                                        maxHeight = Number.MAX_SAFE_INTEGER,
-                                        minHeight = 0,
-                                    }: UseAutosizeTextAreaProps) => {
+    textAreaRef,
+    triggerAutoSize,
+    maxHeight = Number.MAX_SAFE_INTEGER,
+    minHeight = 0,
+}: UseAutosizeTextAreaProps) => {
     const [init, setInit] = React.useState(true);
     React.useEffect(() => {
         // We need to reset the height momentarily to get the correct scrollHeight for the textarea

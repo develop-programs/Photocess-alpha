@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import {Check} from 'lucide-react'
+import { Check } from 'lucide-react'
 import {
     Card,
     CardContent,
@@ -14,20 +14,20 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
+import { Button } from "@/components/ui/button"
 
 export default function page() {
     const features = [
-        {name: 'Background Remover', free: true, premium: true, enterprise: true},
-        {name: 'Image Upscaler', free: true, premium: true, enterprise: true},
-        {name: 'AI Image Generator', free: true, premium: true, enterprise: true},
-        {name: 'Unlimited Access', free: false, premium: true, enterprise: true},
-        {name: 'Priority Support', free: false, premium: true, enterprise: true},
-        {name: 'API Access', free: false, premium: false, enterprise: true},
+        { name: 'Background Remover', free: true, premium: true, enterprise: true },
+        { name: 'Image Upscaler', free: true, premium: true, enterprise: true },
+        { name: 'AI Image Generator', free: true, premium: true, enterprise: true },
+        { name: 'Unlimited Access', free: false, premium: true, enterprise: true },
+        { name: 'Priority Support', free: false, premium: true, enterprise: true },
+        { name: 'API Access', free: false, premium: false, enterprise: true },
     ];
 
     return (
         <div className="min-h-screen bg-black text-white">
-            {/* Hero Section */}
             <section className="container mt-24 mx-auto px-4 py-16 text-center">
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">
                     Unleash Your Creativity with Photocess
@@ -48,74 +48,41 @@ export default function page() {
             <section className="container mx-auto px-4 py-16">
                 <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     {/* Free Plan Card */}
-                    <Card className="bg-zinc-900 border-zinc-800">
-                        <CardHeader>
-                            <CardTitle className="text-3xl font-bold">Free</CardTitle>
-                            <CardDescription className="text-lg text-zinc-400">$0</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <ul className="space-y-2">
-                                <li className="flex items-center gap-2">
-                                    <Check className="h-4 w-4 text-green-500"/>
-                                    <span>Background Remover</span>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <Check className="h-4 w-4 text-green-500"/>
-                                    <span>Image Upscaler</span>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <Check className="h-4 w-4 text-green-500"/>
-                                    <span>AI Image Generator</span>
-                                </li>
-                            </ul>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="bg-zinc-900 border-zinc-800">
-                        <CardHeader>
-                            <CardTitle className="text-3xl font-bold">Premium</CardTitle>
-                            <CardDescription className="text-lg text-zinc-400">$19.99</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <ul className="space-y-2">
-                                <li className="flex items-center gap-2">
-                                    <Check className="h-4 w-4 text-green-500"/>
-                                    <span>All Free Features</span>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <Check className="h-4 w-4 text-green-500"/>
-                                    <span>Unlimited Access</span>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <Check className="h-4 w-4 text-green-500"/>
-                                    <span>Priority Support</span>
-                                </li>
-                            </ul>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="bg-zinc-900 border-zinc-800">
-                        <CardHeader>
-                            <CardTitle className="text-3xl font-bold">Enterprise</CardTitle>
-                            <CardDescription className="text-lg text-zinc-400">Contact Us</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <ul className="space-y-2">
-                                <li className="flex items-center gap-2">
-                                    <Check className="h-4 w-4 text-green-500"/>
-                                    <span>Custom Solutions</span>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <Check className="h-4 w-4 text-green-500"/>
-                                    <span>Dedicated Support</span>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <Check className="h-4 w-4 text-green-500"/>
-                                    <span>API Access</span>
-                                </li>
-                            </ul>
-                        </CardContent>
-                    </Card>
+                    {[
+                        {
+                            title: "Free",
+                            price: "$0",
+                            features: ["Background Remover", "Image Upscaler", "AI Image Generator"],
+                        },
+                        {
+                            title: "Premium",
+                            price: "$19.99",
+                            features: ["All Free Features", "Unlimited Access", "Priority Support"],
+                        },
+                        {
+                            title: "Enterprise",
+                            price: "Contact Us",
+                            features: ["Custom Solutions", "Dedicated Support", "API Access"],
+                        },
+                    ].map((plan) => (
+                        <Card key={plan.title} className="bg-zinc-900 border-zinc-800">
+                            <CardHeader>
+                                <CardTitle className="text-3xl font-bold">{plan.title}</CardTitle>
+                                <CardDescription className="text-lg text-zinc-400">{plan.price}</CardDescription>
+                            </CardHeader>
+                            <CardContent className="flex flex-col items-start">
+                                <Button variant="ringHover" className="w-full bg-white hover:bg-white mb-4">Checkout</Button>
+                                <ul className="space-y-2 w-full grid place-content-start">
+                                    {plan.features.map((feature) => (
+                                        <li key={feature} className="flex items-center gap-2">
+                                            <Check className="h-4 w-4 text-green-500" />
+                                            <span>{feature}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </CardContent>
+                        </Card>
+                    ))}
                 </div>
             </section>
 
@@ -137,21 +104,21 @@ export default function page() {
                             <div>{feature.name}</div>
                             <div className="text-center">
                                 {feature.free ? (
-                                    <Check className="h-4 w-4 mx-auto text-green-500"/>
+                                    <Check className="h-4 w-4 mx-auto text-green-500" />
                                 ) : (
                                     <span className="text-zinc-500">&mdash;</span>
                                 )}
                             </div>
                             <div className="text-center">
                                 {feature.premium ? (
-                                    <Check className="h-4 w-4 mx-auto text-green-500"/>
+                                    <Check className="h-4 w-4 mx-auto text-green-500" />
                                 ) : (
                                     <span className="text-zinc-500">&mdash;</span>
                                 )}
                             </div>
                             <div className="text-center">
                                 {feature.enterprise ? (
-                                    <Check className="h-4 w-4 mx-auto text-green-500"/>
+                                    <Check className="h-4 w-4 mx-auto text-green-500" />
                                 ) : (
                                     <span className="text-zinc-500">&mdash;</span>
                                 )}
@@ -170,7 +137,7 @@ export default function page() {
                             How do I get started with this tool?
                         </AccordionTrigger>
                         <AccordionContent className="text-zinc-400">
-                            Simply sign up and you'll get access to all our basic features with 400 free credits.
+                            Simply sign up and you&apos;ll get access to all our basic features with 400 free credits.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">

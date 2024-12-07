@@ -37,12 +37,12 @@ const initialState: AuthState = {
 }
 
 // Async thunk for fetching data
-export const FetchData = createAsyncThunk("auth/fetchdata", async (email: string) => {
-    const response = await axios.get(`http://localhost:3000/api/auth?email=${email}&subscription=true`);
+export const fetchData = createAsyncThunk("auth/fetchData", async (email: string) => {
+    const response = await axios.get(`${window.location.origin}/api/auth?email=${email}&subscription=true`);
     return response.data;
 });
 
-export const AuthSlice = createSlice({
+const authSlice = createSlice({
     name: "auth",
     initialState,
     reducers: {
@@ -54,23 +54,23 @@ export const AuthSlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-        builder.addCase(FetchData.fulfilled, (state, action) => {
-            state.user = action.payload.data;
+        builder.addCase(fetchData.fulfilled, (state, action: PayloadAction<{ user: User; subscription: Subscription }>) => {
+            state.user = action.payload.user;
             state.subscription = action.payload.subscription;
             state.loading = false;
             state.error = null;
         });
-        builder.addCase(FetchData.rejected, (state, action) => {
+        builder.addCase(fetchData.rejected, (state, action) => {
             state.loading = false;
             state.error = action.error.message || "Failed to fetch data";
         });
-        builder.addCase(FetchData.pending, (state) => {
+        builder.addCase(fetchData.pending, (state) => {
             state.loading = true;
             state.error = null;
         });
     }
 });
 
-export const { logout } = AuthSlice.actions;
+export const { logout } = authSlice.actions;
 
-export default AuthSlice.reducer;
+export default authSlice.reducer;

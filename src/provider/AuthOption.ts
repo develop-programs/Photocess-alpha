@@ -16,6 +16,7 @@ export const Options: NextAuthOptions = {
                 password: { label: "Password", type: "password" },
             },
             async authorize(credentials) {
+                prisma.$connect();
                 // Add logic here to look up the user from the credentials supplied
                 const user = await prisma.user.findUnique({
                     where: {
@@ -36,6 +37,7 @@ export const Options: NextAuthOptions = {
                         }
                     }
                 }
+                prisma.$disconnect();
                 return null;
             },
         }),

@@ -1,3 +1,4 @@
+import Footer from "@/components/custom/Footer";
 import DesktopNav from "@/components/custom/Navbar/DesktopNav";
 import MobileNav from "@/components/custom/Navbar/MobileNav";
 import React from "react";
@@ -12,6 +13,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
         <MobileNav />
       </div>
       <div>{children}</div>
+
     </main>
   );
 }

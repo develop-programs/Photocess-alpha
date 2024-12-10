@@ -4,8 +4,17 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
+import AnimatedShinyText from "@/components/ui/animated-shiny-text";
+import { ArrowRightIcon, ChevronLeft, ChevronRight } from "lucide-react";
+import Review from "@/components/custom/Review";
+import { RainbowButton } from "@/components/ui/rainbow-button";
+import Link from "next/link";
 
 export default function page() {
+  const truncateText = (text: string, maxLength: number) => {
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength) + "...";
+  };
   return (
     <div>
       <div
@@ -15,13 +24,25 @@ export default function page() {
             "radial-gradient(155.35% 155.35% at 50% -17.73%, #000 0%, #191919 43.63%, #343434 68.62%, #666 100%)"
         }}
       >
-        <div className="h-full mt-24 max-w-6xl mx-auto flex justify-center">
-          <div className="flex flex-col items-center mt-32 gap-4">
-            <h2 className="text-6xl font-black text-center leading-normal">
+        <div className="h-full mt-24 max-w-5xl mx-auto flex justify-center">
+          <div className="flex flex-col items-center mt-32 gap-12">
+            <div
+              className={cn(
+                "group select-none rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+              )}
+            >
+              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+                <span>✨ Introducing Photocess</span>
+                <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+              </AnimatedShinyText>
+            </div>
+            <h2 className="text-4xl lg:text-6xl font-black text-center leading-relaxed">
               Easily transform your images into magical creations that meet your
               needs.
             </h2>
-            <Button>Explore More</Button>
+            <RainbowButton className="font-mono">
+              Explore Photocess
+            </RainbowButton>
           </div>
         </div>
       </div>
@@ -31,20 +52,29 @@ export default function page() {
           background: "linear-gradient(180deg, #565656 -48.47%, #000 87.79%)"
         }}
       >
-        <div className="absolute -mt-52 w-full mx-auto flex items-center justify-center">
-          <div className="grid grid-cols-2 place-content-center gap-4">
-            <div className="w-96 h-80 bg-slate-300 rounded-xl"></div>
-            <div className="w-96 h-80 bg-slate-300 rounded-xl"></div>
-            <div className="w-96 h-80 bg-slate-300 rounded-xl"></div>
-            <div className="w-96 h-80 bg-slate-300 rounded-xl"></div>
+        <div className="absolute -mt-60 w-full mx-auto flex items-center justify-center">
+          <div className="max-w-6xl grid md:grid-cols-2 place-content-center gap-2">
+            {Array.from({ length: 4 }).map((_, index) => (
+              <Image
+                key={index}
+                src="/aiGenerated.png"
+                alt="placeholder"
+                width={500}
+                height={500}
+                className="size-[20rem] object-cover rounded-lg"
+              />
+            ))}
           </div>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto flex flex-col justify-end items-center py-12">
+      <div className="max-w-6xl mx-auto flex flex-col justify-end items-center pt-72 pb-12">
         {/* Service section */}
-        <div className="container py-16 mt-80">
-          <div className="grid gap-8 py-16">
+        <div className="container">
+          <h2 className="text-4xl font-black text-center mb-12">
+            Our Services
+          </h2>
+          <div className="grid gap-8 py-6">
             {[
               {
                 title: "Background Remover",
@@ -83,26 +113,31 @@ export default function page() {
               <Card
                 key={index}
                 className={cn(
-                  index % 2 ? "flex-row-reverse" : "flex-row",
-                  "py-12 px-24 flex"
+                  index % 2 ? "md:flex-row-reverse" : "md:flex-row",
+                  "py-12 px-6 lg:px-24 flex flex-col gap-6 bg-black"
                 )}
               >
-                <div className="flex-1">
+                <div className="flex-1 space-y-3">
                   <h3 className="text-xl font-semibold mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-gray-400 mb-4">{service.description}</p>
-                  <Button
-                    variant="gooeyLeft"
-                    className="bg-white hover:bg-white/80"
-                  >
-                    {service.buttonText}
-                  </Button>
+                  <p className="md:hidden">
+                    {truncateText(service.description, 100)}
+                  </p>
+                  <p className="hidden md:block text-gray-400 mb-4">
+                    {service.description}
+                  </p>
+                  <Link href="/" className="group" legacyBehavior passHref>
+                    <RainbowButton className="font-mono font-semibold">
+                      Try Now
+                      <ChevronRight className="ml-2 size-3 group-hover:translate-x-2 transition-all delay-150 ease-linear" />
+                    </RainbowButton>
+                  </Link>
                 </div>
                 <div
                   className={cn(
-                    index % 2 ? "justify-start" : "justify-end",
-                    "flex-1 flex items-center"
+                    index % 2 ? "lg:justify-start" : "lg:justify-end",
+                    "flex-1 flex items-center justify-center"
                   )}
                 >
                   {
@@ -142,30 +177,15 @@ export default function page() {
               incredibly easy to navigate, and the powerful features deliver
               impressive results every time.
             </p>
-            <div className="flex items-center justify-center gap-4">
-              <div className="relative w-12 h-12 rounded-full overflow-hidden">
-                <Image
-                  src="/placeholder.svg?height=100&width=100"
-                  alt="User avatar"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="text-left">
-                <p className="font-semibold">Jason Brown</p>
-                <p className="text-sm text-gray-400">
-                  Professional Photographer
-                </p>
-              </div>
-            </div>
+            <Review />
           </div>
         </section>
 
         <div className="space-y-4 text-center">
-          <h3 className="text-2xl font-semibold">
+          <h3 className="text-lg lg:text-2xl font-semibold">
             Join thousands of satisfied users
           </h3>
-          <div className="flex gap-2 max-w-md mx-auto">
+          <div className="flex flex-col lg:flex-row gap-2 px-2 max-w-md mx-auto">
             <Input
               type="email"
               placeholder="Enter your email"

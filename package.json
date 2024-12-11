@@ -3,13 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "install": "npm install --legacy-peer-deps",
+    "install": "npm install",
     "dev": "next dev",
     "build": "next build && prisma generate",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "npx prisma generate",
-    "preinstall": "npm install --legacy-peer-deps"
+    "postinstall": "npx prisma generate"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
